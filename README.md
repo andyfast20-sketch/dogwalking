@@ -35,7 +35,7 @@ A sensational, AI-inspired marketing site for a luxury dog walking concierge. Bu
 3. **Configure environment variables**
    ```bash
    cp .env.example .env
-   # update SECRET_KEY and DATABASE_URL as needed
+   # update SECRET_KEY, DATABASE_URL, and SITE_BASE_URL as needed
    ```
 4. **Initialize the database (optional until you add models/migrations)**
    ```bash
@@ -49,3 +49,7 @@ A sensational, AI-inspired marketing site for a luxury dog walking concierge. Bu
    ```
 
 The site includes all HTML, CSS, and JavaScript required to render four polished pages. Extend the `Booking` model and add forms/controllers as you integrate real scheduling, payments, and automation.
+
+### Deployment URL
+
+Set `SITE_BASE_URL` to the fully qualified domain where you deploy (e.g. `https://dogwalking-opxq.onrender.com`) so canonical tags and share metadata point to the live site.

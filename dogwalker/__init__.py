@@ -35,7 +35,10 @@ def create_app(config_object: str | None = None) -> Flask:
 
     @app.context_processor
     def inject_globals():  # pragma: no cover - context injection
-        return {"current_year": datetime.utcnow().year}
+        return {
+            "current_year": datetime.utcnow().year,
+            "site_base_url": app.config.get("SITE_BASE_URL", ""),
+        }
 
     from . import models  # noqa: F401
     from .routes import main
