@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}LuxePaws Dog Walking | About{% endblock %}
+{% block content %}
+<section class="page-hero" aria-labelledby="about-title">
+  <div class="container narrow">
+    <h1 id="about-title">The artistry behind LuxePaws</h1>
+    <p>
+      LuxePaws harmonizes canine wellness experts, AI creatives, and hospitality concierges to engineer unforgettable walks that sparkle with imagination.
+    </p>
+  </div>
+</section>
+
+<section class="container about-grid" aria-label="Our story">
+  <article>
+    <h2>Born from boutique hospitality</h2>
+    <p>
+      Our founders crafted concierge experiences for five-star hotels before channeling that expertise to beloved pets. Today our AI lab designs vivid walk concepts and our handlers bring them to life with warmth.
+    </p>
+    <p>
+      Every experience is documented with AI-enhanced imagery so you can relive the glow of every outing.
+    </p>
+  </article>
+  <article class="about-image image-ai-4" role="img" aria-label="AI generated collage of dog walkers and futuristic cityscapes."></article>
+</section>
+
+<section class="container team-section" aria-label="Leadership">
+  <h2>Leadership team</h2>
+  <div class="grid team-grid">
+    <article class="team-card">
+      <div class="team-portrait image-ai-5" role="img" aria-label="AI generated portrait of a smiling woman with a dog."></div>
+      <h3>Sienna Rivers</h3>
+      <p>Founder &amp; Chief Experience Officer</p>
+    </article>
+    <article class="team-card">
+      <div class="team-portrait image-ai-6" role="img" aria-label="AI generated portrait of a stylish man with a corgi."></div>
+      <h3>Jules Moreno</h3>
+      <p>Chief Innovation Architect</p>
+    </article>
+    <article class="team-card">
+      <div class="team-portrait image-ai-7" role="img" aria-label="AI generated portrait of a trainer with multiple dogs."></div>
+      <h3>Harper Lee</h3>
+      <p>Director of Canine Wellness</p>
+    </article>
+  </div>
+</section>
+
+<section class="container recent-bookings" aria-label="Recent bookings">
+  <h2>Recent bookings</h2>
+  {% if recent_bookings %}
+  <ul>
+    {% for booking in recent_bookings %}
+    <li>
+      <strong>{{ booking.client_name }}</strong> reserved <em>{{ booking.service_type }}</em> for {{ booking.pet_name }} on {{ booking.scheduled_for.strftime('%b %d, %Y') }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="muted">Bookings will appear here once you connect the database.</p>
+  {% endif %}
+</section>
+{% endblock %}
