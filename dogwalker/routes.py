@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Blueprint, render_template, request
 
 from . import db
@@ -19,7 +21,19 @@ def services():
 @main.route("/booking", methods=["GET", "POST"])
 def booking():
     if request.method == "POST":
-        form_data = request.form
+        form_data = request.form.to_dict()
+        form_data.pop("csrf_token", None)
+
+        scheduled_raw = form_data.get("scheduled_for", "")
+        if scheduled_raw:
+            try:
+                scheduled_dt = datetime.fromisoformat(scheduled_raw)
+                form_data["scheduled_for_display"] = scheduled_dt.strftime(
+                    "%B %d, %Y at %I:%M %p"
+                )
+            except ValueError:
+                form_data["scheduled_for_display"] = scheduled_raw
+
         return render_template(
             "booking.html",
             page="booking",

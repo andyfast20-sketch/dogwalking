@@ -23,6 +23,10 @@ const observer = new IntersectionObserver(
   }
 );
 
-document.querySelectorAll(".highlight-card, .service-card, .testimonial-card, .team-card, .recent-bookings li, .cta-inner, .booking-copy, .booking-form").forEach((section) => {
-  observer.observe(section);
-});
+document
+  .querySelectorAll(
+    ".highlight-card, .service-card, .testimonial-card, .team-card, .recent-bookings li, .cta-inner, .booking-copy, .booking-form"
+  )
+  .forEach((section) => {
+    observer.observe(section);
+  });
