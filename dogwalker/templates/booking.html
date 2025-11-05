@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}LuxePaws Dog Walking | Booking{% endblock %}
+{% block content %}
+<section class="page-hero" aria-labelledby="booking-title">
+  <div class="container narrow">
+    <h1 id="booking-title">Reserve an unforgettable walk</h1>
+    <p>
+      Share a few details and our concierge team will confirm availability within moments. AI-assisted scheduling ensures an ideal match for every pup.
+    </p>
+  </div>
+</section>
+
+<section class="container booking-section" aria-label="Booking form">
+  <div class="booking-grid">
+    <div class="booking-form">
+      <form method="post" novalidate>
+        <div class="form-field">
+          <label for="client_name">Your name</label>
+          <input type="text" id="client_name" name="client_name" placeholder="Alex Morgan" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-field">
+          <label for="pet_name">Pet name</label>
+          <input type="text" id="pet_name" name="pet_name" placeholder="Sir Barkington" required />
+        </div>
+        <div class="form-field">
+          <label for="service_type">Service type</label>
+          <select id="service_type" name="service_type" required>
+            <option value="" disabled selected>Choose an experience</option>
+            <option>Riviera Reverie</option>
+            <option>Neon Nightfall</option>
+            <option>Forest Fairytale</option>
+            <option>Custom Bespoke Walk</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="scheduled_for">Preferred date &amp; time</label>
+          <input type="datetime-local" id="scheduled_for" name="scheduled_for" required />
+        </div>
+        <div class="form-field">
+          <label for="notes">Experience notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us about energy levels, favorite treats, and dreams." ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit request</button>
+      </form>
+      {% if submitted %}
+      <div class="form-success" role="status">
+        <h2>Thank you!</h2>
+        <p>We&apos;ll polish your itinerary and reach out at {{ form_data.email }} shortly.</p>
+      </div>
+      {% endif %}
+    </div>
+    <aside class="booking-sidebar">
+      <div class="booking-image" role="img" aria-label="AI generated cozy lounge with a relaxed dog."></div>
+      <div class="booking-copy">
+        <h2>Concierge touches</h2>
+        <p>
+          Expect white-glove logistics, continuous biometrics, and curated AI art prints from every adventure. We attend to dietary needs, medication timing, and training cues.
+        </p>
+        <ul>
+          <li>Instant updates via LuxePaws app</li>
+          <li>Medical-grade GPS harnesses</li>
+          <li>Daily wellness report with AI sentiment analysis</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

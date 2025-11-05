@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}LuxePaws Dog Walking | Home{% endblock %}
+{% block content %}
+<section class="hero full-bleed" aria-labelledby="hero-title">
+  <div class="hero-media" role="img" aria-label="AI generated artwork of an elegant dog walking by the river at sunrise."></div>
+  <div class="container hero-content">
+    <h1 id="hero-title">Elevated dog walking for extraordinary companions</h1>
+    <p>
+      LuxePaws pairs AI-personalized adventure plans with concierge walkers so every outing feels bespoke. We walk, train, and delight the pups you adore.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ url_for('main.booking') }}">Book a discovery stroll</a>
+      <a class="btn btn-outline" href="{{ url_for('main.services') }}">Explore services</a>
+    </div>
+  </div>
+</section>
+
+<section class="highlights container" aria-label="Highlights">
+  <div class="grid highlights-grid">
+    <article class="highlight-card">
+      <h2>AI-crafted routes</h2>
+      <p>We blend live weather, mood tracking, and enrichment science to create real-time walking itineraries.</p>
+    </article>
+    <article class="highlight-card">
+      <h2>Concierge walkers</h2>
+      <p>Background-checked pros deliver spa-level care, biometric updates, and luxury touches every step.</p>
+    </article>
+    <article class="highlight-card">
+      <h2>Seamless tech</h2>
+      <p>Manage bookings, wellness notes, and curated photo journals inside a single polished dashboard.</p>
+    </article>
+  </div>
+</section>
+
+<section class="showcase full-bleed" aria-labelledby="showcase-title">
+  <div class="showcase-media" role="img" aria-label="AI generated illustration of a dog with a futuristic skyline in the background."></div>
+  <div class="container showcase-content">
+    <h2 id="showcase-title">Adventures painted by imagination</h2>
+    <p>
+      With AI-generated visual previews, you select the vibe: serene waterfront meditations, urban couture promenades, or woodland storybook quests.
+    </p>
+    <ul class="showcase-list">
+      <li>Dynamic pace adjustments tuned to your dog&apos;s energy</li>
+      <li>Immersive sensory pit-stops for mindful enrichment</li>
+      <li>Shareable AI-enhanced reels capturing every joyful moment</li>
+    </ul>
+  </div>
+</section>
+
+<section class="testimonials container" aria-labelledby="testimonial-title">
+  <div class="testimonials-header">
+    <h2 id="testimonial-title">Loved by discerning pet parents</h2>
+    <p>Stories from the LuxePaws pack.</p>
+  </div>
+  <div class="grid testimonial-grid">
+    <figure class="testimonial-card">
+      <blockquote>
+        “The AI route suggestions keep Luna engaged and calm. Her spa-walk has become our weekly highlight.”
+      </blockquote>
+      <figcaption>— Mila, SoHo</figcaption>
+    </figure>
+    <figure class="testimonial-card">
+      <blockquote>
+        “The booking experience is seamless and the walkers deliver luxe-level attention every time.”
+      </blockquote>
+      <figcaption>— Andre, Tribeca</figcaption>
+    </figure>
+    <figure class="testimonial-card">
+      <blockquote>
+        “I receive cinematic reels after every walk. It’s like a mini premier starring Bentley.”
+      </blockquote>
+      <figcaption>— Sloane, Upper West Side</figcaption>
+    </figure>
+  </div>
+</section>
+{% endblock %}
