@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}LuxePaws Dog Walking{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="{{ site_base_url }}{{ request.path }}" />
+    <meta property="og:url" content="{{ site_base_url }}{{ request.path }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/194/194279.png" />
+  </head>
+  <body class="page-{{ page|default('generic') }}">
+    <header class="site-header">
+      <div class="container flex header-inner">
+        <a href="{{ url_for('main.home') }}" class="brand">
+          <span class="brand-mark">LuxePaws</span>
+          <span class="brand-tag">Premium Dog Walking</span>
+        </a>
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation">
+          <ul>
+            <li><a href="{{ url_for('main.home') }}" class="{% if page == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ url_for('main.services') }}" class="{% if page == 'services' %}active{% endif %}">Services</a></li>
+            <li><a href="{{ url_for('main.booking') }}" class="{% if page == 'booking' %}active{% endif %}">Booking</a></li>
+            <li><a href="{{ url_for('main.about') }}" class="{% if page == 'about' %}active{% endif %}">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container grid footer-grid">
+        <div>
+          <h3>LuxePaws</h3>
+          <p>Luxury dog walking powered by AI-crafted planning and concierge care.</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <p>1021 Riverside Walk<br />Riverdale, NY 10471</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="tel:+18885551234">(888) 555-1234</a><br /><a href="mailto:hello@luxepaws.dog">hello@luxepaws.dog</a></p>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p>Mon–Sun: 6am – 10pm</p>
+        </div>
+      </div>
+      <p class="footer-note">&copy; {{ current_year }} LuxePaws. Tailored adventures for extraordinary pups.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  </body>
+</html>

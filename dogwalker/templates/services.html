@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}LuxePaws Dog Walking | Services{% endblock %}
+{% block content %}
+<section class="page-hero" aria-labelledby="services-title">
+  <div class="container narrow">
+    <h1 id="services-title">Services curated for luminous lifestyles</h1>
+    <p>
+      Every walk is sculpted by AI insights, data-backed enrichment, and our handlers’ intuition. Select from our signature experiences or craft your own.
+    </p>
+  </div>
+</section>
+
+<section class="container service-grid" aria-label="Service packages">
+  <article class="service-card">
+    <div class="service-image image-ai-1" role="img" aria-label="AI generated scene of a dog enjoying a riverside promenade."></div>
+    <div class="service-body">
+      <h2>Riviera Reverie</h2>
+      <p>Sunrise promenades with guided mindfulness cues, hydration spa breaks, and AI-tuned playlists.</p>
+      <ul>
+        <li>60-minute curated route</li>
+        <li>Luxury transport to trailhead</li>
+        <li>Post-walk aromatherapy cooldown</li>
+      </ul>
+    </div>
+  </article>
+  <article class="service-card">
+    <div class="service-image image-ai-2" role="img" aria-label="AI generated artwork of a dog walking through a futuristic park with neon lights."></div>
+    <div class="service-body">
+      <h2>Neon Nightfall</h2>
+      <p>Evening adventures with illuminated safety tech, augmented reality scent games, and cinematic photo reels.</p>
+      <ul>
+        <li>45-minute sunset session</li>
+        <li>Custom luminescent gear</li>
+        <li>AI-generated highlight video</li>
+      </ul>
+    </div>
+  </article>
+  <article class="service-card">
+    <div class="service-image image-ai-3" role="img" aria-label="AI generated portrait of a dog leaping through a lush forest."></div>
+    <div class="service-body">
+      <h2>Forest Fairytale</h2>
+      <p>Woodland escapades featuring sensory foraging quests, natural agility circuits, and grounded restorative breathing.</p>
+      <ul>
+        <li>90-minute immersive trek</li>
+        <li>Trail snacks and pup picnic</li>
+        <li>Wellness biometrics dashboard</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section class="container cta-panel" aria-label="Custom experiences">
+  <div class="cta-inner">
+    <h2>Craft an experience as unique as your dog</h2>
+    <p>
+      Mix concierge add-ons like chauffeured pickups, in-walk training refreshers, and bespoke AI art prints. Our planners will assemble the perfect itinerary.
+    </p>
+    <a class="btn btn-primary" href="{{ url_for('main.booking') }}">Design a bespoke walk</a>
+  </div>
+</section>
+{% endblock %}
